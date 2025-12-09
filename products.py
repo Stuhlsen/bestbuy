@@ -89,6 +89,3 @@ class Product:
             self.deactivate()
 
         return total_price
-
-
-

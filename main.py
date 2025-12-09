@@ -76,7 +76,7 @@ def make_order(store_obj):
     try:
         total_price = store_obj.order(shopping_list)
         print(f"\nOrder placed successfully! Total price: {total_price}\n")
-    except Exception as error:  # relies on Product.buy raising exceptions
+    except ValueError as error:
         print(f"\nError while placing order: {error}\n")
 
 

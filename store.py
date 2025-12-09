@@ -1,6 +1,3 @@
-import products
-
-
 class Store:
     """Represents a store that holds multiple products."""
 
@@ -53,13 +50,16 @@ class Store:
         """
         Receive a list of (product, quantity) tuples and buy them.
 
+        :param shopping_list: list of tuples (Product, int)
+        :return: total price of the order as float
         """
         total_price = 0.0
 
         for product, quantity in shopping_list:
+            # Verwende self -> Produkt muss im Store sein
+            if product not in self.products:
+                raise ValueError("Product not found in store.")
+
             total_price += product.buy(quantity)
 
         return total_price
-
-
-
